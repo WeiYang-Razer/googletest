@@ -1,0 +1,28 @@
+{
+  "name": "googletest",
+  "version": "1.17.0.0",
+  "schemaVersion": 2,
+  "kind": "StaticLib",
+  "description": "Google's C++ test and mocking framework",
+  "dependencies": {},
+  "build": {
+    "system": "cmake",
+    "configs": [
+      "Debug",
+      "Release",
+      "RelWithDebInfo",
+      "MinSizeRel"
+    ],
+    "configure": [
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DBUILD_GMOCK=ON",
+      "-DINSTALL_GTEST=ON",
+      "-Dgtest_build_tests=OFF",
+      "-Dgtest_build_samples=OFF",
+      "-DCMAKE_DEBUG_POSTFIX=d",
+      "-DCMAKE_RELWITHDEBINFO_POSTFIX=rd",
+      "-DCMAKE_MINSIZEREL_POSTFIX=msr"
+    ],
+    "installDir": "install"
+  }
+}

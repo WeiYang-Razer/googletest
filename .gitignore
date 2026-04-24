@@ -87,3 +87,10 @@ googlemock/gtest
 /CMakeCache.txt
 /ALL_BUILD.vcxproj.filters
 /ALL_BUILD.vcxproj
+
+# wyvrnpm-generated — do not commit
+/build/
+/wyvrn_internal/
+/wyvrn.lock
+/CMakePresets.json
+/CMakeUserPresets.json
