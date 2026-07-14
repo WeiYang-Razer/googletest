@@ -1,0 +1,27 @@
+{
+  "wyvrnVersion": 2,
+  "generatedAt": "2026-07-14T06:32:49.474Z",
+  "platform": "win_x64",
+  "profileName": "default",
+  "profile": {
+    "os": "Windows",
+    "arch": "x86_64",
+    "compiler": "msvc",
+    "compiler.version": "194",
+    "compiler.cppstd": "20",
+    "compiler.runtime": "dynamic"
+  },
+  "profileHash": "dab578c203d618cb",
+  "packages": {},
+  "effectiveConf": {
+    "cmake": {
+      "cache": {
+        "gtest_build_tests": "OFF",
+        "gtest_build_samples": "OFF",
+        "CMAKE_DEBUG_POSTFIX": "d",
+        "CMAKE_RELWITHDEBINFO_POSTFIX": "rd",
+        "CMAKE_MINSIZEREL_POSTFIX": "msr"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "googletest",
+  "version": "1.18.1.0",
+  "schemaVersion": 2,
+  "description": "Google's C++ testing and mocking framework (gtest + gmock).",
+  "kind": "StaticLib",
+
+  "options": {
+    "build_gmock":   { "default": true,  "allowed": [true, false] },
+    "install_gtest": { "default": true,  "allowed": [true, false] },
+    "shared":        { "default": false, "allowed": [true, false] }
+  },
+
+  "compatibility": {
+    "os": "exact",
+    "arch": "exact",
+    "compiler": "exact",
+    "compiler.version": "exact-or-newer",
+    "compiler.cppstd": "exact-or-newer",
+    "compiler.runtime": "exact",
+    "options.build_gmock":   "exact",
+    "options.install_gtest": "exact",
+    "options.shared":        "exact"
+  },
+
+  "conf": {
+    "cmake": {
+      "cache": {
+        "gtest_build_tests":           "OFF",
+        "gtest_build_samples":         "OFF",
+        "CMAKE_DEBUG_POSTFIX":         "d",
+        "CMAKE_RELWITHDEBINFO_POSTFIX": "rd",
+        "CMAKE_MINSIZEREL_POSTFIX":    "msr"
+      }
+    }
+  },
+
+  "build": {
+    "system":    "cmake",
+    "generator": ["Ninja Multi-Config", "Visual Studio 17 2022"],
+    "configs":   ["Debug", "Release", "RelWithDebInfo", "MinSizeRel"],
+    "configure": [
+      "-DBUILD_GMOCK=${options.build_gmock}",
+      "-DINSTALL_GTEST=${options.install_gtest}",
+      "-DBUILD_SHARED_LIBS=${options.shared}",
+      "-DGTEST_HAS_ABSL=OFF"
+    ],
+    "buildArgs":  ["--parallel"],
+    "installDir": "install"
+  },
+
+  "dependencies": {}
+}
